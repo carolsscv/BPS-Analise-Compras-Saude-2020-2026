@@ -2,7 +2,7 @@
 
 Projeto acadêmico de Visualização de Dados e Business Intelligence da **Carreira Tech – Trilha Análise de Dados**.
 
-> **Status:** o dashboard foi montado no Looker Studio com KPIs, filtros e gráficos. Antes da publicação final, substitua os campos indicados como pendentes pelos links reais do relatório e do repositório. Este README descreve a versão CSV enviada para revisão.
+> **Status:** dashboard desenvolvido no Looker Studio, com KPIs, filtros e gráficos. Este repositório contém arquivos de análise exploratória, tratamento e documentação. A base consolidada usada pelo dashboard deve ser disponibilizada ao avaliador por meio autorizado, pois ela não aparece na estrutura do repositório mostrada na captura.
 
 ## 1. Objetivo
 
@@ -36,9 +36,7 @@ O CSV está codificado em UTF-8 com BOM e utiliza vírgula como delimitador, for
 
 ### Procedimentos a documentar no repositório
 
-O arquivo final consolidado está disponível, mas os sete CSVs anuais originais e o script usado na concatenação **não foram incluídos nos arquivos enviados para esta revisão**. Para tornar o processo totalmente reproduzível, inclua no GitHub o script efetivamente usado para baixar/ler e concatenar os arquivos anuais, ou ajuste esta seção para refletir fielmente o método que você utilizou.
-
-Não declare que os arquivos anuais foram tratados de uma forma específica sem confirmar que esse procedimento foi executado.
+O repositório contém o script `BPS_20_26_Carolina_entrega/scripts/tratamento_bps.py`. Os arquivos anuais originais não aparecem na estrutura exibida. Consulte o script para confirmar os caminhos de entrada e saída e descreva somente as etapas que ele realmente executa. Para reprodução integral, disponibilize a base consolidada e/ou instruções claras para obtê-la, respeitando as regras da turma.
 
 ### Validações feitas no CSV recebido
 
@@ -91,7 +89,9 @@ O preço ponderado geral não deve ser usado para comparar diretamente produtos 
 
 **Ferramenta:** Looker Studio.
 
-**Dashboard Looker Studio:** o link compartilhável deve ser adicionado após configurar o acesso ao relatório.
+**Dashboard Looker Studio:** https://datastudio.google.com/s/v3OGKY2_CQY
+
+Confirme que o relatório permite acesso ao avaliador.
 
 Filtros visíveis na versão atual:
 - Ano (`ano_compra`)
@@ -182,24 +182,34 @@ O valor registrado em 2025 é consideravelmente maior que em 2024 na base analis
 
 1. Baixe os arquivos anuais de 2020 a 2026 na fonte oficial do BPS.
 2. Consulte o dicionário de dados e confira a estrutura de cada arquivo.
-3. Prepare e concatene os arquivos anuais, padronizando as colunas e os tipos de dados. O script Python utilizado nessa etapa deverá ser incluído no repositório para permitir a reprodução do processo.
-4. Conecte o CSV consolidado/enxuto ao Looker Studio.
-5. Confira os tipos e agregações dos campos e valide os KPIs com os totais calculados no arquivo.
-6. Aplique os filtros e compare os valores com os resultados registrados neste README.
+3. Consulte e execute, se aplicável, `BPS_20_26_Carolina_entrega/scripts/tratamento_bps.py`, ajustando os caminhos de arquivos conforme o ambiente.
+4. Garanta que o CSV consolidado esteja disponível localmente. A base não aparece na estrutura do repositório mostrada na captura; sem ela, o notebook e o dashboard podem não ser reproduzíveis por outra pessoa.
+5. Conecte o CSV consolidado/enxuto ao Looker Studio.
+6. Confira os tipos e agregações dos campos e valide os KPIs com os totais calculados no arquivo.
+7. Aplique os filtros e compare os valores com os resultados registrados neste README.
 
-## 12. Estrutura recomendada do repositório
+## 12. Estrutura do repositório
 
-BPS_20_26_Carolina/
+Na estrutura publicada, os arquivos estão organizados desta forma:
+
+```text
+BPS-Analise-Compras-Saude-2020-2026/
 ├── README.md
-├── data/
-│   └── processed/
-│       └── BPS_20_26_Carolina_Dashboard_Looker.csv
-├── scripts/
-│   └── tratamento_bps.py
-├── dashboard/
-│   └── dashboard.png
-└── video/
-    └── apresentacao.mp4
+└── BPS_20_26_Carolina_entrega/
+    ├── README.md
+    ├── analysis/
+    │   ├── analise_bps.ipynb
+    │   ├── evolucao_anual.csv
+    │   ├── kpis.csv
+    │   └── qualidade_por_ano.csv
+    ├── dashboard/
+    │   └── GUIA_LOOKER_STUDIO.md
+    ├── scripts/
+    │   └── tratamento_bps.py
+    └── requirements.txt
+```
+
+A base consolidada e o vídeo de apresentação não aparecem na captura da estrutura. Inclua-os, ou informe claramente onde podem ser acessados, conforme as regras e os limites de tamanho da turma. O CSV usado no Looker tem aproximadamente 95,5 MB, então verifique os limites de upload do GitHub antes de tentar adicioná-lo.
 
 ## 13. Versionamento sugerido
 
@@ -211,15 +221,12 @@ Use commits pequenos e descritivos, conforme as mudanças realmente realizadas. 
 - `feat: adiciona capturas do dashboard`
 - `docs: registra limitações e recomendações`
 
-Crie apenas commits e branches correspondentes a atividades que você realmente executou.
+## 14. Links do projeto
 
-14. Links do projeto
+- **Dashboard Looker Studio:** https://datastudio.google.com/s/v3OGKY2_CQY
+- **Repositório GitHub:** https://github.com/carolsscv/BPS-Analise-Compras-Saude-2020-2026
 
-Dashboard Looker Studio: https://datastudio.google.com/s/v3OGKY2_CQY
-Repositório GitHub: https://github.com/carolsscv/BPS-Analise-Compras-Saude-2020-2026/
+## Autora
 
-Autora
-
-Carolina da Silva Corrêa
-
+Carolina da Silva Corrêa  
 Projeto acadêmico – Carreira Tech | Trilha Análise de Dados

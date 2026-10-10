@@ -222,9 +222,13 @@ Use commits pequenos e descritivos, conforme as mudanças realmente realizadas. 
 - `docs: registra limitações e recomendações`
 
 ## 14. Links do projeto
-
 - **Dashboard Looker Studio:** https://datastudio.google.com/s/v3OGKY2_CQY
 - **Repositório GitHub:** https://github.com/carolsscv/BPS-Analise-Compras-Saude-2020-2026
+
+- Base de dados
+A base consolidada está disponibilizada no arquivo data.zip, dentro da pasta BPS_20_26_Carolina_entrega.
+
+Para executar o notebook, extraia o ZIP e mantenha o arquivo CSV na pasta data/processed/. Confira se o nome do arquivo corresponde ao caminho definido no notebook analysis/analise_bps.ipynb.
 
 ## Autora
 
